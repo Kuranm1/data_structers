@@ -15,7 +15,6 @@ public class Main {
         graph.addEdge("A","C");
         graph.addEdge("B","C");
         graph.addEdge("D","E");
-        graph.addVertex("B");
         System.out.println(graph);
         System.out.println("#### remove vertex");
         graph.removeVertex("A");

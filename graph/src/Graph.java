@@ -21,9 +21,7 @@ public class Graph {
 
     public boolean removeVertex(String vertex){
         if (this.adjList.containsKey(vertex)){
-            if (!this.adjList.get(vertex).isEmpty()) {
-                for(String v: this.adjList.keySet()) this.adjList.get(v).remove(vertex);
-            }
+            for(String v: this.adjList.get(vertex)) this.adjList.get(v).remove(vertex);
             this.adjList.remove(vertex);
             return true;
         }
