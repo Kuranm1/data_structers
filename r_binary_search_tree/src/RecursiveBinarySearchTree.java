@@ -89,6 +89,32 @@ public class RecursiveBinarySearchTree {
         return rContains(root, value);
     }
 
+    private Node invertBST(Node node){
+        if(node == null) return null;
+        Node temp = node.left;
+        node.left = invertBST(node.right);
+        node.right = invertBST(temp);
+        return node;
+    }
+
+    public void invertBST(){
+        invertBST(root);
+    }
+
+
+    // 0,1,2,3
+    // 1,2,3,4
+    private Node sortedArrayToBST(int[] nums, int start, int end){
+        if(start > end) return null;
+        int midIndex = start + (end-start)/2;
+        Node node = new Node(nums[midIndex]);
+        node.left = sortedArrayToBST(nums, start, midIndex-1);
+        node.right = sortedArrayToBST(nums, midIndex+1,  end);
+        return node;
+    }
+    public void sortedArrayToBST(int[] nums) {
+        this.root = sortedArrayToBST(nums, 0, nums.length - 1);
+    }
 
 
     private int minValue(Node node){

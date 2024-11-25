@@ -19,11 +19,23 @@ public class Main {
         System.out.println("\nRoot->Left: " + rBST.getRoot().left.value);
         System.out.println("\nRoot->Right: " + rBST.getRoot().right.value);
 
-        System.out.println("==================");
+        System.out.println("=========Delete=========");
         rBST.delete(1);
         System.out.println("Root: " + rBST.getRoot().value);
         System.out.println("\nRoot->Right: " + rBST.getRoot().right.value);
 
+        System.out.println("========Invert==========");
+        rBST.insert(1);
+        rBST.invertBST();
+        System.out.println("Root: " + rBST.getRoot().value);
+        System.out.println("\nRoot->Left: " + rBST.getRoot().left.value);
+        System.out.println("\nRoot->Right: " + rBST.getRoot().right.value);
+
+        System.out.println("========Sorted array to BST==========");
+        rBST.sortedArrayToBST(new int[] {1,2,3});
+        System.out.println("Root: " + rBST.getRoot().value);
+        System.out.println("\nRoot->Left: " + rBST.getRoot().left.value);
+        System.out.println("\nRoot->Right: " + rBST.getRoot().right.value);
 
     }
 }
