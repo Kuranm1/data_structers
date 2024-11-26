@@ -37,5 +37,8 @@ public class Main {
         System.out.println("\nRoot->Left: " + rBST.getRoot().left.value);
         System.out.println("\nRoot->Right: " + rBST.getRoot().right.value);
 
+        System.out.println("=========BFS Traversal========");
+        System.out.println(rBST.bfs());
+
     }
 }

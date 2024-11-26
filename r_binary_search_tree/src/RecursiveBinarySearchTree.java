@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class RecursiveBinarySearchTree {
     public Node root;
 
@@ -123,4 +127,19 @@ public class RecursiveBinarySearchTree {
         }
         return node.value;
     }
+
+    public ArrayList<Integer> bfs (){
+        ArrayList<Integer> list = new ArrayList<>();
+        if(root == null) return list;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node node = queue.poll();
+            list.add(node.value);
+            if(node.left != null) queue.add(node.left);
+            if(node.right != null) queue.add(node.right);
+        }
+        return list;
+    }
+
 }
