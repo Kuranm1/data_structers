@@ -40,5 +40,14 @@ public class Main {
         System.out.println("=========BFS Traversal========");
         System.out.println(rBST.bfs());
 
+        System.out.println("=========DFS Inorder Traversal========");
+        System.out.println(rBST.DFSInOrder());
+
+        System.out.println("=========DFS Preorder Traversal========");
+        System.out.println(rBST.DFSPreOrder());
+
+        System.out.println("=========DFS Postorder Traversal========");
+        System.out.println(rBST.DFSPostOrder());
+
     }
 }

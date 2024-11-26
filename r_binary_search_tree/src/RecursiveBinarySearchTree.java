@@ -142,4 +142,44 @@ public class RecursiveBinarySearchTree {
         return list;
     }
 
+    private ArrayList<Integer> DFSPreOrder(Node node, ArrayList<Integer> list){
+        if(node == null) return list;
+        list.add(node.value);
+        if(node.left != null) DFSPreOrder(node.left, list);
+        if(node.right != null) DFSPreOrder(node.right, list);
+        return list;
+    }
+    public ArrayList<Integer> DFSPreOrder(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list = DFSPreOrder(root, list);
+        return list;
+    }
+
+    private ArrayList<Integer> DFSInOrder(Node node, ArrayList<Integer> list){
+        if(node == null) return list;
+        if(node.left != null) DFSInOrder(node.left, list);
+        list.add(node.value);
+        if(node.right != null) DFSInOrder(node.right, list);
+        return list;
+    }
+    public ArrayList<Integer> DFSInOrder(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list = DFSInOrder(root, list);
+        return list;
+    }
+
+
+    private ArrayList<Integer> DFSPostOrder(Node node, ArrayList<Integer> list){
+        if(node == null) return list;
+        if(node.left != null) DFSPostOrder(node.left, list);
+        if(node.right != null) DFSPostOrder(node.right, list);
+        list.add(node.value);
+        return list;
+    }
+    public ArrayList<Integer> DFSPostOrder(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list = DFSPostOrder(root, list);
+        return list;
+    }
+
 }
